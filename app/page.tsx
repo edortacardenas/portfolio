@@ -5,8 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Github, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, MessageSquare, CheckCircle2, Linkedin, FileText, QrCode } from "lucide-react"; // Added Linkedin, FileText, QrCode
+import { Github, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, MessageSquare, CheckCircle2, QrCode } from "lucide-react"; // Added Linkedin, FileText, QrCode
 import { motion } from "framer-motion"; // Import motion from framer-motion
+import Image from "next/image"; // Importar el componente Image de Next.js
 import { useEffect, useState } from "react";
 import { sectionAnimation, professionalSummary, contactInfo, languages, technologies, skills, experiences, education } from "@/lib/constants";
 
@@ -96,11 +97,14 @@ export default function Home() {
           <div className="flex flex-col items-center md:items-start pt-2 md:pt-0">
             <h3 className="text-2xl font-semibold mb-4 text-primary flex items-center"><QrCode className="mr-2 h-6 w-6"/>Scan My Portfolio</h3>
             <div className="bg-white p-3 inline-block rounded-lg shadow-md">
-              <img 
+              <Image
                 src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&bgcolor=ffffff&color=000000&data=${encodeURIComponent(qrCodeData)}`}  
                 alt="QR code for portfolio" 
+                width={180} // Ancho intrínseco de la imagen del QR
+                height={180} // Alto intrínseco de la imagen del QR
                 className="w-44 h-44 md:w-48 md:h-48 rounded"
               />
+
             </div>
             <p className="text-sm mt-3 text-muted-foreground text-center md:text-left max-w-xs">
               Quickly access this portfolio on your mobile device by scanning the QR code.
@@ -192,14 +196,18 @@ export default function Home() {
                 <CardTitle className="text-2xl">{exp.role}</CardTitle>
                 <CardDescription className="text-md">{exp.period}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent> 
                 <p className="text-lg leading-relaxed mb-4">{exp.description}</p>
                 {exp.imagePlaceholder && (
-                  <div className="my-4">
-                    <img 
+                  <div className="my-4"> {/* Contenedor para la imagen */}
+                    <Image
                       src={exp.imagePlaceholder} 
                       alt={`${exp.role} project snapshot`} 
-                      className="rounded-md border border-border w-full h-auto object-contain" 
+                      width={0} // Requerido para el dimensionamiento basado en estilos en Next.js 13+
+                      height={0} // Requerido para el dimensionamiento basado en estilos en Next.js 13+
+                      sizes="100vw" // Por defecto, ajusta si es necesario: ej. (max-width: 768px) 100vw, 50vw
+                      style={{ width: '100%', height: 'auto' }} // Logra ancho responsivo y alto automático
+                      className="rounded-md border border-border object-contain" // Aplica estilos y object-fit
                     />
                   </div>
                 )}

@@ -42,7 +42,7 @@ export const experiences = [
     role: "INDEPENDENT PROGRAMMER",
     period: "2022-2023",
     description: "I developed 'Hoteles.SA,' a desktop software system. This management solution was specifically designed for upscale (3+ star) 'Sun and Beach' hotels in Cuba, with a focus on optimizing resource management and improving operational efficiency.",
-    imagePlaceholder: "/placeholder-hoteles-sa.png", // Replace with your actual screenshot
+    imagePlaceholder: "/Hotelsa.jpg", // Replace with your actual screenshot
   },
   {
     role: "EPFO-VC COMPUTER ENGINEER",
