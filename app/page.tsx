@@ -1,0 +1,337 @@
+"use client";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Github, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, MessageSquare, CheckCircle2, Linkedin, FileText, QrCode } from "lucide-react"; // Added Linkedin, FileText, QrCode
+import { motion } from "framer-motion"; // Import motion from framer-motion
+import { useEffect, useState } from "react";
+
+const professionalSummary = `Software Engineer and Full Stack Developer passionate about creating efficient, high-impact technological solutions. Experienced in end-to-end application development (front-end and back-end). I possess a strong understanding of software architectures and agile methodologies. My focus is on delivering quality products. I am seeking opportunities to add value and continue growing professionally in dynamic environments.`;
+
+const technologies = [
+  "HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL", 
+  "Django", "React Js", "Next Js", "Express Js", "GitHub", "Git", "Vite"
+];
+
+const skills = [
+  "Punctuality and responsibility.",
+  "Efficient and effective.",
+  "Assertive communicator.",
+  "Versatility to perform successfully both in collaborative environments and in roles requiring autonomy and self-management.",
+  "Capacity for analysis and research.",
+  "Proactive problem-solving and overcoming obstacles.",
+  "Competent management of obligations and commitments in both professional and personal settings."
+];
+
+const experiences = [
+  {
+    role: "INDEPENDENT PROGRAMMER",
+    period: "2024-2025",
+    description: "I developed a recipe platform that integrates Artificial Intelligence for culinary content generation. The application allows users to obtain and save recipes, as well as perform traditional searches. Deployed on Railway, it utilizes the PERN stack and consumes HuggingFace models for its AI functionalities.",
+    imagePlaceholder: "/Chef.jpg", // Replace with your actual screenshot
+    liveLink: "https://master-chef-frontend-production.up.railway.app", // Replace with your actual live link
+  },
+  {
+    role: "INDEPENDENT PROGRAMMER",
+    period: "2023-2024",
+    description: "I created and deployed a dynamic news site on Railway, implementing two-factor authentication (2FA) via OTP or verification link, based on user preference. The project was developed using the PERN stack (PostgreSQL, Express.js, React.js, Node.js) and integrated the News API for content retrieval. Additionally, I successfully deployed a secure and efficient authentication system on Vercel, using Clerk and leveraging Tailwind CSS and Shadcn/ui technologies.",
+    imagePlaceholder: "/Noticias.jpg", // Replace with your actual screenshot
+    liveLink: "https://frontend-react-production-6e44.up.railway.app", // Replace with your actual live link
+  },
+  {
+    role: "INDEPENDENT PROGRAMMER",
+    period: "2023-2024",
+    description: "I successfully deployed a secure and efficient authentication system on Vercel, using Clerk and leveraging Tailwind CSS and Shadcn/ui technologies.",
+    imagePlaceholder: "/Clerk.jpg", // Replace with your actual screenshot
+    liveLink: "https://authclerk-pi.vercel.app/", // Replace with your actual live link
+  },
+  {
+    role: "INDEPENDENT PROGRAMMER",
+    period: "2022-2023",
+    description: "I developed 'Hoteles.SA,' a desktop software system. This management solution was specifically designed for upscale (3+ star) 'Sun and Beach' hotels in Cuba, with a focus on optimizing resource management and improving operational efficiency.",
+    imagePlaceholder: "/placeholder-hoteles-sa.png", // Replace with your actual screenshot
+  },
+  {
+    role: "EPFO-VC COMPUTER ENGINEER",
+    period: "2016-2021",
+    description: "Responsible for the comprehensive management of the company's technological infrastructure and cybersecurity, including its 52 units distributed throughout the province. My main responsibilities included: Proactive maintenance, installation, and updating of servers and client equipment to ensure operational continuity and optimal performance. Monitoring and compliance with the institution's specific technological and software requirements, ensuring system integrity and availability. Implementation and management of cybersecurity policies to protect the company's information assets.",
+  },
+  {
+    role: "IPVCE ERNESTO GUEVARA PROFESSOR",
+    period: "2014-2016",
+    description: "Lead Teacher of Mathematics and English for 10th and 11th-grade students, responsible for the instruction and academic progress of eight groups. My duties included designing and implementing curricula and planning lessons tailored to student needs. Additionally, I actively participated as a member of the Mathematics evaluation panel, contributing to the grading of entrance exams.",
+  },
+];
+
+const education = [
+  {
+    degree: "Degree in Computer Engineering",
+    institution: "HIGHER EDUCATION UCLV MARTA ABREU",
+    period: "2010-2014",
+  },
+  {
+    degree: "BACCALAUREATE",
+    institution: "IPVCE ERNESTO GUEVARA",
+    period: "2007-2010",
+  },
+];
+
+const contactInfo = {
+  phone: "(53) 55405073",
+  email: "edortacardenas@gmail.com", // Removed "https://" for cleaner mailto and display
+  github: "https://github.com/edortacardenas",
+  address: "Sindico#58 b/ Colon y Bonifacio M. streets. Villa Clara, Santa Clara.",
+};
+
+const languages = [
+  { lang: "Spanish", level: "Native" },
+  { lang: "English", level: "C1", certificateLink: "http://cert.efset.org/AuHvM8" },
+];
+
+// Reusable animation variant for sections
+const sectionAnimation = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
+export default function Home() {
+
+  const [qrCodeData, setQrCodeData] = useState('YOUR_PORTFOLIO_URL_HERE'); // Default/placeholder
+
+  useEffect(() => {
+    // This code runs only on the client, after hydration
+    if (typeof window !== 'undefined') {
+      setQrCodeData(window.location.href);
+    }
+  }, []); // Empty dependency array ensures this runs once on mount
+
+  return (
+    
+    <div className="min-h-screen bg-gradient-to-br from-slate-300 via-gray-400 to-sky-600 dark:from-slate-900 dark:via-slate-800 dark:to-sky-950 container mx-auto p-4 md:p-8 space-y-12 font-sans text-gray-800 dark:text-gray-200">
+      {/* Header Section */}
+      <motion.header 
+        className="flex flex-col md:flex-row items-center text-center md:text-left gap-6 md:gap-8 pt-8 pb-12 border-b border-slate-300 dark:border-slate-700"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={sectionAnimation.transition}
+      >
+        <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-primary shrink-0">
+          <AvatarImage src="/imagenErick.jpg" alt="Erick Dorta Cardenas" /> {/* Replace with your photo */}
+          <AvatarFallback>EDC</AvatarFallback>
+        </Avatar>
+        <div className="mt-4 md:mt-0">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary">Erick Dorta Cardenas</h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mt-2">Degree in Computer Engineering</p>
+          <p className="text-lg text-muted-foreground mt-2">Software Engineer and Full Stack Developer</p>
+        </div>
+        </motion.header>
+        {/* Contact, Languages, and QR Section */}
+        <motion.section 
+        id="contact" 
+        aria-labelledby="contact-heading" 
+        className="bg-muted/30 dark:bg-muted/10 rounded-lg p-6 md:p-8 shadow-lg"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={{ ...sectionAnimation.transition, delay: 0.1 }} // Slight delay
+      >
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 items-start">
+          {/* Column 1: Contact Details & Languages */}
+          <div>
+            <h2 id="contact-heading" className="text-3xl font-semibold mb-6 text-primary">Contact & Connect</h2>
+            <div className="space-y-4 text-lg">
+              <p className="flex items-center">
+                <Phone className="mr-3 h-5 w-5 text-primary shrink-0" /> 
+                <span>{contactInfo.phone}</span>
+              </p>
+              <p className="flex items-center">
+                <Mail className="mr-3 h-5 w-5 text-primary shrink-0" /> 
+                <a href={`mailto:${contactInfo.email}`} className="hover:underline break-all" title={`Email ${contactInfo.email}`}>{contactInfo.email}</a>
+              </p>
+              <p className="flex items-center">
+                <Github className="mr-3 h-5 w-5 text-primary shrink-0" /> 
+                <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="hover:underline break-all" title="GitHub Profile">{contactInfo.github.replace('https://github.com/','')}</a>
+              </p>
+              <p className="flex items-start">
+                <MapPin className="mr-3 h-5 w-5 text-primary mt-1 shrink-0" /> 
+                <span>{contactInfo.address}</span>
+              </p>
+            </div>
+            
+            <div className="mt-10">
+                <h3 className="text-2xl font-semibold mb-5 text-primary">Languages</h3>
+                <ul className="space-y-3 text-lg">
+                {languages.map((lang, index) => (
+                    <li key={index} className="flex items-baseline">
+                      <strong className="font-semibold">{lang.lang}:</strong> 
+                      <span className="ml-2">{lang.level}</span>
+                      {lang.certificateLink && (
+                          <a href={lang.certificateLink} target="_blank" rel="noopener noreferrer" className="ml-2 text-sm text-primary hover:underline flex items-center">
+                            <ExternalLink className="inline h-3 w-3 mr-1"/> View Certificate
+                          </a>
+                      )}
+                    </li>
+                ))}
+                </ul>
+            </div>
+          </div>
+
+          {/* Column 2: QR Code */}
+          <div className="flex flex-col items-center md:items-start pt-2 md:pt-0">
+            <h3 className="text-2xl font-semibold mb-4 text-primary flex items-center"><QrCode className="mr-2 h-6 w-6"/>Scan My Portfolio</h3>
+            <div className="bg-white p-3 inline-block rounded-lg shadow-md">
+              <img 
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&bgcolor=ffffff&color=000000&data=${encodeURIComponent(qrCodeData)}`}  
+                alt="QR code for portfolio" 
+                className="w-44 h-44 md:w-48 md:h-48 rounded"
+              />
+            </div>
+            <p className="text-sm mt-3 text-muted-foreground text-center md:text-left max-w-xs">
+              Quickly access this portfolio on your mobile device by scanning the QR code.
+            </p>
+          </div>
+        
+        </div>
+        </motion.section>
+
+      <Separator />
+
+      {/* About Me Section */}
+      <motion.section 
+        id="about" 
+        aria-labelledby="about-heading"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={{ ...sectionAnimation.transition, delay: 0.2 }}
+      >
+        <h2 id="about-heading" className="text-3xl font-semibold mb-6 text-primary flex items-center">
+          <MessageSquare className="mr-3 h-7 w-7" /> Professional Summary
+        </h2>
+        <Card className="shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 bg-transparent">
+          <CardContent className="pt-6">
+          <p className="text-lg leading-relaxed">
+              {professionalSummary}
+            </p>
+          </CardContent>
+        </Card>
+        </motion.section>
+
+      <Separator />
+
+      {/* Technologies Section */}
+      <motion.section 
+        id="technologies" 
+        aria-labelledby="technologies-heading"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={{ ...sectionAnimation.transition, delay: 0.3 }}>
+        <h2 id="technologies-heading" className="text-3xl font-semibold mb-6 text-primary">Technologies</h2>
+        <div className="flex flex-wrap gap-3">
+          {technologies.map((tech) => (
+            <Badge key={tech} variant="secondary" className="text-md px-4 py-2 shadow transform hover:scale-105 transition-transform duration-200 bg-blue-200">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+        </motion.section>
+
+      <Separator />
+
+      {/* Skills Section */}
+      <motion.section 
+        id="skills" 
+        aria-labelledby="skills-heading"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={{ ...sectionAnimation.transition, delay: 0.4 }}
+        >
+        <h2 id="skills-heading" className="text-3xl font-semibold mb-6 text-primary">Skills</h2>
+        <ul className="space-y-3">
+          {skills.map((skill, index) => (
+            <li key={index} className="flex items-start text-lg">
+              <CheckCircle2 className="h-6 w-6 mr-3 text-green-500 flex-shrink-0 mt-1" />
+              <span>{skill}</span>
+            </li>
+          ))}
+        </ul>
+      </motion.section>
+
+      <Separator />
+
+      {/* Professional Experience Section */}
+      <motion.section 
+        id="experience" 
+        aria-labelledby="experience-heading"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={{ ...sectionAnimation.transition, delay: 0.5 }}
+        >
+        <h2 id="experience-heading" className="text-3xl font-semibold mb-8 text-primary flex items-center">
+          <Briefcase className="mr-3 h-7 w-7" /> Professional Experience
+        </h2>
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <Card key={index} className="shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 bg-transparent">
+              <CardHeader>
+                <CardTitle className="text-2xl">{exp.role}</CardTitle>
+                <CardDescription className="text-md">{exp.period}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg leading-relaxed mb-4">{exp.description}</p>
+                {exp.imagePlaceholder && (
+                  <div className="my-4">
+                    <img 
+                      src={exp.imagePlaceholder} 
+                      alt={`${exp.role} project snapshot`} 
+                      className="rounded-md border border-border w-full h-auto object-contain" 
+                    />
+                  </div>
+                )}
+              </CardContent>
+              {exp.liveLink && (
+                <CardFooter>
+                  <Button variant="ghost" asChild className="bg-transparent hover:bg-blue-200 hover:ring-1">
+                    <a href={exp.liveLink} target="_blank" rel="noopener noreferrer">
+                      View Project <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              )}
+            </Card>
+          ))}
+        </div>
+      </motion.section>
+
+      <Separator />
+
+      {/* Educational Background Section */}
+      <motion.section 
+        id="education" 
+        aria-labelledby="education-heading"
+        initial={sectionAnimation.initial}
+        animate={sectionAnimation.animate}
+        transition={{ ...sectionAnimation.transition, delay: 0.6 }}>
+        <h2 id="education-heading" className="text-3xl font-semibold mb-8 text-primary flex items-center">
+          <GraduationCap className="mr-3 h-7 w-7" /> Educational Background
+        </h2>
+        <div className="space-y-6">
+          {education.map((edu, index) => (
+            <Card key={index} className="shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 bg-transparent">
+              <CardHeader>
+                <CardTitle className="text-xl">{edu.degree}</CardTitle>
+                <CardDescription className="text-md">{edu.institution} ({edu.period})</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </motion.section>
+
+    </div>
+
+      
+    
+  );
+}
