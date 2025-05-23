@@ -14,7 +14,7 @@ import { sectionAnimation, professionalSummary, contactInfo, languages, technolo
 
 export default function Home() {
 
-  const [qrCodeData, setQrCodeData] = useState('YOUR_PORTFOLIO_URL_HERE'); // Default/placeholder
+  const [qrCodeData, setQrCodeData] = useState('https://portfolio-gilt-psi-47.vercel.app'); // Default/placeholder
 
   useEffect(() => {
     // This code runs only on the client, after hydration
