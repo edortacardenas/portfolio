@@ -28,7 +28,7 @@ export const experiences = [
     role: "INDEPENDENT PROGRAMMER",
     period: "2023-2024",
     description: "I created and deployed a dynamic news site on Railway, implementing two-factor authentication (2FA) via OTP or verification link, based on user preference. The project was developed using the PERN stack (PostgreSQL, Express.js, React.js, Node.js) and integrated the News API for content retrieval. Additionally, I successfully deployed a secure and efficient authentication system on Vercel, using Clerk and leveraging Tailwind CSS and Shadcn/ui technologies.",
-    imagePlaceholder: "/Noticias.jpg", // Replace with your actual screenshot
+    imagePlaceholder: "/Noticias.webp", // Replace with your actual screenshot
     liveLink: "https://frontend-react-production-6e44.up.railway.app", // Replace with your actual live link
   },
   {
@@ -42,7 +42,7 @@ export const experiences = [
     role: "INDEPENDENT PROGRAMMER",
     period: "2022-2023",
     description: "I developed 'Hoteles.SA,' a desktop software system. This management solution was specifically designed for upscale (3+ star) 'Sun and Beach' hotels in Cuba, with a focus on optimizing resource management and improving operational efficiency.",
-    imagePlaceholder: "/Hotelsa.jpg", // Replace with your actual screenshot
+    imagePlaceholder: "/Hotelsa.webp", // Replace with your actual screenshot
   },
   {
     role: "EPFO-VC COMPUTER ENGINEER",
