@@ -34,7 +34,7 @@ export default function Home() {
         transition={sectionAnimation.transition}
       >
         <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-primary shrink-0">
-          <AvatarImage src="/imagenErick.jpg" alt="Erick Dorta Cardenas" /> {/* Replace with your photo */}
+          <AvatarImage src="/imagenErick.webp" alt="Erick Dorta Cardenas" /> 
           <AvatarFallback>EDC</AvatarFallback>
         </Avatar>
         <div className="mt-4 md:mt-0">
