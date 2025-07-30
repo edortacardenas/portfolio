@@ -22,14 +22,14 @@ export const experiences = [
     period: "2024-2025",
     description: "I developed a recipe platform that integrates Artificial Intelligence for culinary content generation. The application allows users to obtain and save recipes, as well as perform traditional searches. Deployed on Railway, it utilizes the PERN stack and consumes HuggingFace models for its AI functionalities.",
     imagePlaceholder: "/Chef.jpg", // Replace with your actual screenshot
-    liveLink: "https://master-chef-frontend-production.up.railway.app", // Replace with your actual live link
+    liveLink: "https://master-chef-frontend.vercel.app", // Replace with your actual live link
   },
   {
     role: "INDEPENDENT PROGRAMMER",
     period: "2023-2024",
     description: "I created and deployed a dynamic news site on Railway, implementing two-factor authentication (2FA) via OTP or verification link, based on user preference. The project was developed using the PERN stack (PostgreSQL, Express.js, React.js, Node.js) and integrated the News API for content retrieval. Additionally, I successfully deployed a secure and efficient authentication system on Vercel, using Clerk and leveraging Tailwind CSS and Shadcn/ui technologies.",
     imagePlaceholder: "/Noticias.webp", // Replace with your actual screenshot
-    liveLink: "https://frontend-react-five-eta.vercel.app", // Replace with your actual live link
+    liveLink: "https://frontend-react-lilac.vercel.app", // Replace with your actual live link
   },
   {
     role: "INDEPENDENT PROGRAMMER",
@@ -43,6 +43,7 @@ export const experiences = [
     period: "2022-2023",
     description: "I developed 'Hoteles.SA,' a desktop software system. This management solution was specifically designed for upscale (3+ star) 'Sun and Beach' hotels in Cuba, with a focus on optimizing resource management and improving operational efficiency.",
     imagePlaceholder: "/Hotelsa.webp", // Replace with your actual screenshot
+    liveLink: "https://hotel-nine-gold.vercel.app", // Replace with your actual live link
   },
   {
     role: "EPFO-VC COMPUTER ENGINEER",
