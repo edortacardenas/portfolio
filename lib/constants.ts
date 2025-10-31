@@ -34,7 +34,7 @@ export const experiences = [
   {
     role: "INDEPENDENT PROGRAMMER",
     period: "2023-2024",
-    description: "I successfully deployed a secure and efficient authentication system on Vercelç using Next.js and Clerk, leveraging Tailwind CSS and Shadcn/ui technologies.",
+    description: "I successfully deployed a secure and efficient authentication system on Vercel using Next.js and Clerk, leveraging Tailwind CSS and Shadcn/ui technologies.",
     imagePlaceholder: "/Clerk.jpg", // Replace with your actual screenshot
     liveLink: "https://authclerk-pi.vercel.app/", // Replace with your actual live link
   },
