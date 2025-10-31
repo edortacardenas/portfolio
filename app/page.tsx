@@ -179,35 +179,40 @@ export default function Home() {
       <Separator />
 
       {/* Professional Experience Section */}
+                
       <motion.section 
         id="experience" 
         aria-labelledby="experience-heading"
         initial={sectionAnimation.initial}
         animate={sectionAnimation.animate}
         transition={{ ...sectionAnimation.transition, delay: 0.5 }}
-        >
+      >
         <h2 id="experience-heading" className="text-3xl font-semibold mb-8 text-primary flex items-center">
           <Briefcase className="mr-3 h-7 w-7" /> Professional Experience
         </h2>
-        <div className="space-y-8">
+
+        {/* --- CAMBIOS AQUÍ --- */}
+        {/* Reemplazamos 'space-y-8' por clases de Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 bg-transparent">
+            <Card key={index} className="flex flex-col shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 bg-transparent">
               <CardHeader>
                 <CardTitle className="text-2xl">{exp.role}</CardTitle>
                 <CardDescription className="text-md">{exp.period}</CardDescription>
               </CardHeader>
-              <CardContent> 
+              {/* Hacemos que el contenido principal ocupe el espacio restante */}
+              <CardContent className="flex-grow"> 
                 <p className="text-lg leading-relaxed mb-4">{exp.description}</p>
                 {exp.imagePlaceholder && (
-                  <div className="my-4"> {/* Contenedor para la imagen */}
+                  <div className="my-4">
                     <Image
                       src={exp.imagePlaceholder} 
                       alt={`${exp.role} project snapshot`} 
-                      width={0} // Requerido para el dimensionamiento basado en estilos en Next.js 13+
-                      height={0} // Requerido para el dimensionamiento basado en estilos en Next.js 13+
-                      sizes="100vw" // Por defecto, ajusta si es necesario: ej. (max-width: 768px) 100vw, 50vw
-                      style={{ width: '100%', height: 'auto' }} // Logra ancho responsivo y alto automático
-                      className="rounded-md border border-border object-contain" // Aplica estilos y object-fit
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                      className="rounded-md border border-border object-contain"
                     />
                   </div>
                 )}
@@ -225,7 +230,7 @@ export default function Home() {
           ))}
         </div>
       </motion.section>
-
+      
       <Separator />
 
       {/* Educational Background Section */}
