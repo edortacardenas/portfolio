@@ -21,7 +21,7 @@ export const experiences = [
     role: "INDEPENDENT PROGRAMMER",
     period: "2024-2025",
     description: "I developed a recipe platform that integrates Artificial Intelligence for culinary content generation. The application allows users to obtain and save recipes, as well as perform traditional searches. Deployed on Vercel, it utilizes the PERN stack and consumes HuggingFace models for its AI functionalities and integrate a n8n chatbot.",
-    imagePlaceholder: "/Chef.jpg", // Replace with your actual screenshot
+    imagePlaceholder: "/Cheff.webp", // Replace with your actual screenshot
     liveLink: "https://master-chef-frontend.vercel.app", // Replace with your actual live link
   },
   {
