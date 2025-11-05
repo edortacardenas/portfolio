@@ -28,7 +28,7 @@ export const experiences = [
     role: "INDEPENDENT PROGRAMMER",
     period: "2023-2024",
     description: "I created and deployed a dynamic news site implementing two-factor authentication (2FA) via OTP or verification link, based on user preference. The project was developed using the PERN stack (PostgreSQL, Express.js, React.js, Node.js) and integrated the News API for content retrieval.",
-    imagePlaceholder: "/Noticias.webp", // Replace with your actual screenshot
+    imagePlaceholder: "/News.webp", // Replace with your actual screenshot
     liveLink: "https://frontend-react-lilac.vercel.app", // Replace with your actual live link
   },
   {
